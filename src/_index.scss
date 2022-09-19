@@ -1,0 +1,61 @@
+@import "_responsive";
+
+:root {
+  --main-color: #eb8926;
+  --sub-color: #0d8cb0;
+  --white-100: white;
+  --white-200: rgb(229, 229, 299);
+  --gray-100: #eae9e8;
+  --gray-200: #b3b3b3;
+  --black-100: rgb(20, 20, 20);
+}
+
+body {
+  margin: 0;
+}
+
+.flex--start,
+.flex--end,
+.flex--between,
+.flex--around,
+.flex--evenly,
+.flex--center {
+  display: flex;
+  align-items: center;
+}
+
+.flex--start {
+  justify-content: flex-start;
+}
+
+.flex--end {
+  justify-content: flex-end;
+}
+
+.flex--between {
+  justify-content: space-between;
+}
+
+.flex--around {
+  justify-content: space-around;
+}
+
+.flex--evenly {
+  justify-content: space-evenly;
+}
+
+.flex--center {
+  justify-content: center;
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+.flex--row {
+  flex-direction: row;
+}
+
+.flex--wrap {
+  flex-wrap: wrap;
+}

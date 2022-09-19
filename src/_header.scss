@@ -1,0 +1,131 @@
+@import "_index";
+@import "_responsive.scss";
+
+header, header * {
+  z-index: 10;
+}
+
+header {
+  position: sticky;
+  top: 0;
+
+  .navbar {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(243, 243, 243, 0.4);
+    padding: 1em;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-shadow: 1px 1px 2px var(--dark-bg-color);
+
+    &__title {
+      color: var(--black-100);
+      text-decoration: none;
+    }
+
+    &__menu {
+      list-style: none;
+      margin-block-start: 0;
+      margin-block-end: 0;
+
+      &__item {
+        padding: 0.8em;
+
+        a {
+          color: var(--black-100);
+          text-decoration: none;
+        }
+      }
+
+    }
+
+    &__toggle {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+
+      #navbar__toggle__checkbox {
+        opacity: 0;
+
+        &:checked + .navbar__toggle__label > span {
+          transform: rotate(45deg);
+        }
+
+        &:checked + .navbar__toggle__label > span::before {
+          top: 0;
+          transform: rotate(0deg);
+        }
+
+        &:checked + .navbar__toggle__label > span::after {
+          top: 0;
+          transform: rotate(90deg);
+        }
+      }
+
+      .navbar__toggle__label {
+        position: fixed;
+        top: 20px;
+        right: 10px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+
+        & > span,
+        & > span::before,
+        & > span::after {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: var(--gray-200);
+          transition-duration: .25s;
+        }
+
+        & > span::before {
+          content: '';
+          top: -8px;
+        }
+
+        & > span::after {
+          content: '';
+          top: 8px;
+        }
+
+      }
+
+    }
+
+  }
+}
+
+
+@include media(tablet, mobile) {
+  header {
+
+  }
+}
+
+
+@include mobile {
+  header {
+    .navbar {
+
+      &__menu {
+        display: none;
+        flex-direction: column;
+
+        &.active {
+          display: flex;
+        }
+      }
+
+      &__toggle {
+        display: flex;
+      }
+    }
+  }
+}
+
+
